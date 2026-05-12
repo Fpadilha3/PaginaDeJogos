@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Adivinhação</title>
+
+  <link rel="stylesheet" href="adivinha.css">
+</head>
+<body>
+
+  <div class="winner-screen" id="winnerScreen">
+    <div class="winner-card">
+
+      <h1>VITÓRIA</h1>
+
+      <p id="winnerText"></p>
+
+      <p class="best" id="recordText"></p>
+
+      <button class="btn primary" onclick="closeWinner()">
+        CONTINUAR
+      </button>
+
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="left">
+
+      <h1 class="title">
+        JOGO DA<br>
+        ADIVINHAÇÃO
+      </h1>
+
+      <div class="card">
+
+        <h2 class="card-title">
+          JOGADORES
+        </h2>
+
+        <div class="players">
+
+          <input type="text" id="player1" placeholder="Nome Jogador 1">
+
+          <input type="text" id="player2" placeholder="Nome Jogador 2">
+
+          <select id="difficulty">
+            <option value="100">Fácil (1 a 100)</option>
+            <option value="500">Médio (1 a 500)</option>
+            <option value="1000">Difícil (1 a 1000)</option>
+          </select>
+
+        </div>
+
+        <div class="game-box">
+
+          <div class="guess-input">
+
+            <input type="number" id="guess" placeholder="Digite um número">
+
+            <button class="btn primary" id="guessBtn">
+              ENVIAR
+            </button>
+
+          </div>
+
+          <div class="message" id="message">
+            Clique em iniciar para começar.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="side">
+
+      <div class="card">
+
+        <h2 class="card-title">STATUS</h2>
+
+        <p class="status-text" id="status">
+          Aguardando início...
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h2 class="card-title">JOGADOR DA VEZ</h2>
+
+        <div class="turn" id="turnPlayer">
+          J1
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <h2 class="card-title">PLACAR</h2>
+
+        <div class="score">
+
+          <div>
+            <p id="scoreName1">Jogador 1</p>
+            <span class="x" id="score1">0</span>
+          </div>
+
+          <div>
+            <p id="scoreName2">Jogador 2</p>
+            <span class="o" id="score2">0</span>
+          </div>
+
+          <div>
+            <p>Tentativas</p>
+            <span id="tries">0</span>
+          </div>
+
+          <div>
+            <p>Recorde</p>
+            <span id="bestScore">-</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <h2 class="card-title">ÚLTIMO PALPITE</h2>
+
+        <div class="last-guess">
+
+          <p id="lastPlayer">-</p>
+
+          <span id="lastGuess">?</span>
+
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <h2 class="card-title">COMO JOGAR</h2>
+
+        <ul>
+          <li>2 jogadores disputam</li>
+          <li>O sistema sorteia um número</li>
+          <li>O jogo dá dicas se é maior ou menor</li>
+          <li>Quem acertar ganha o ponto</li>
+          <li>Menor número de tentativas vira recorde</li>
+        </ul>
+
+      </div>
+
+      <div class="buttons">
+
+        <button class="btn primary" id="startBtn">
+          INICIAR
+        </button>
+
+        <button class="btn danger" id="restartBtn">
+          REINICIAR
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="adivinha.js"></script>
+
+</body>
+</html>

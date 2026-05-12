@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Neon Velha</title>
+
+  <link rel="stylesheet" href="velha.css">
+</head>
+<body>
+
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
+
+  <main class="container">
+
+    <!-- ESQUERDA -->
+    <section class="left">
+
+      <div class="top-area">
+
+        <div class="logo-box">
+          <h1 class="logo">
+            <span>JOGO DA VELHA</span>
+          </h1>
+
+          <p class="subtitle">
+      
+          </p>
+        </div>
+
+        <div class="players-card">
+
+          <h3>JOGADORES</h3>
+
+          <input
+            type="text"
+            id="playerX"
+            placeholder="Nome Jogador X"
+            maxlength="12"
+          >
+
+          <input
+            type="text"
+            id="playerO"
+            placeholder="Nome Jogador O"
+            maxlength="12"
+          >
+
+        </div>
+
+      </div>
+
+      <!-- TABULEIRO -->
+      <div class="board">
+
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+
+      </div>
+
+    </section>
+
+    <!-- DIREITA -->
+    <aside class="right">
+
+      <div class="card">
+        <h2>STATUS</h2>
+
+        <p class="status-text" id="status">
+          Clique em iniciar
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>JOGADOR DA VEZ</h2>
+
+        <div class="turn-player" id="turn">
+          X
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>PLACAR</h2>
+
+        <div class="score-item">
+          <span id="nameX">
+            Jogador X
+          </span>
+
+          <span class="score-x" id="scoreX">
+            0
+          </span>
+        </div>
+
+        <div class="score-item">
+          <span id="nameO">
+            Jogador O
+          </span>
+
+          <span class="score-o" id="scoreO">
+            0
+          </span>
+        </div>
+
+      </div>
+
+      <div class="card how-card">
+
+        <h2>COMO JOGAR</h2>
+
+        <ul>
+          <li>2 jogadores: X e O</li>
+          <li>Cada jogador joga uma vez</li>
+          <li>Complete 3 iguais para vencer</li>
+          <li>Se encher o tabuleiro = empate</li>
+        </ul>
+
+      </div>
+
+      <div class="buttons">
+
+        <button id="startBtn" class="start-btn">
+          Iniciar
+        </button>
+
+        <button id="restartBtn" class="restart-btn">
+          Reiniciar
+        </button>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- DEGRADE EMBAIXO -->
+  <div class="bottom-gradient"></div>
+
+  <script src="velha.js"></script>
+
+</body>
+</html>

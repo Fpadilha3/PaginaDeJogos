@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>Neon Genius Multiplayer</title>
+
+  <link rel="stylesheet"
+  href="genius.css">
+
+  <link rel="preconnect"
+  href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800&display=swap"
+  rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="background"></div>
+
+  <header>
+
+    <h1>
+      NEON <span>GENIUS</span>
+    </h1>
+
+    <div class="topButtons">
+
+      <select id="difficulty">
+
+        <option value="900">
+          Fácil
+        </option>
+
+        <option value="650" selected>
+          Médio
+        </option>
+
+        <option value="400">
+          Difícil
+        </option>
+
+        <option value="250">
+          Insano
+        </option>
+
+      </select>
+
+      <button id="startBtn">
+        Iniciar
+      </button>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <div class="leftSide">
+
+      <div class="playersBox">
+
+        <input
+        type="text"
+        id="player1Input"
+        placeholder="Nome Jogador 1">
+
+        <input
+        type="text"
+        id="player2Input"
+        placeholder="Nome Jogador 2">
+
+      </div>
+
+      <div class="board">
+
+        <div class="pad green"
+        data-color="green"></div>
+
+        <div class="pad red"
+        data-color="red"></div>
+
+        <div class="pad yellow"
+        data-color="yellow"></div>
+
+        <div class="pad blue"
+        data-color="blue"></div>
+
+        <div class="center">
+
+          <h2>GENIUS</h2>
+
+          <p>MULTIPLAYER</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel">
+
+      <div class="card">
+
+        <h3>ROUND</h3>
+
+        <span id="round">
+          0
+        </span>
+
+      </div>
+
+      <div class="card">
+
+        <h3>JOGADOR</h3>
+
+        <p id="currentPlayerText">
+          Aguardando...
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>STATUS</h3>
+
+        <p id="message">
+          Clique em START
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>RECORD</h3>
+
+        <span id="record">
+          0
+        </span>
+
+      </div>
+
+      <div class="card">
+
+        <h3>PONTOS</h3>
+
+        <p id="scoreText">
+
+          0 x 0
+
+        </p>
+
+      </div>
+
+      <div class="card howTo">
+
+        <h3>COMO JOGAR</h3>
+
+        <p>
+
+          Observe a sequência de cores
+          mostrada pelo jogo.
+
+          Depois repita clicando
+          nas mesmas cores
+          na ordem correta.
+
+          Cada jogador joga sozinho.
+
+          Quem alcançar a maior
+          rodada vence.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <div class="gameOver hidden"
+  id="gameOver">
+
+    <div class="box">
+
+      <h2>FIM DE JOGO</h2>
+
+      <p id="finalText"></p>
+
+      <button id="restartBtn">
+        CONTINUAR
+      </button>
+
+    </div>
+
+  </div>
+
+  <audio id="greenSound"
+  src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
+
+  <audio id="redSound"
+  src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
+
+  <audio id="yellowSound"
+  src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
+
+  <audio id="blueSound"
+  src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
+
+  <script src="geniust.js"></script>
+
+</body>
+</html>
