@@ -1,46 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página de Jogos</title>
-  <link rel="stylesheet" href="style.css">
+
+  <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Frontend Inteligente
+  </title>
+
+  <!-- LINK DO CSS -->
+  <link
+  rel="stylesheet"
+  href="style.css">
+
 </head>
+
 <body>
 
-<header>
-  <h1>🎮 Página de Jogos</h1>
-  <p>Frontend Inteligente com JavaScript</p>
-</header>
+  <div class="games-preview">
 
-<main class="cards">
+    <div class="game-preview-card">
 
-  <div class="card">
-    <h2>🧠 Genius</h2>
-    <p>Teste sua memória!</p>
-    <a href="genius.html">Jogar</a>
+      <div class="game-preview-left">
+
+        <div class="game-icon genius">
+          🧠
+        </div>
+
+        <div class="game-info">
+
+          <h2>Genius</h2>
+
+          <p>
+            Teste sua memória e velocidade.
+          </p>
+
+          <div class="game-tags">
+            <span>Memória</span>
+            <span>Online</span>
+            <span>Ranking</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <a href="Genius/genius.html" class="play-btn">
+        Jogar
+      </a>
+
+    </div>
+
+    <div class="game-preview-card">
+
+      <div class="game-preview-left">
+
+        <div class="game-icon velha">
+          ⭕
+        </div>
+
+        <div class="game-info">
+
+          <h2>Jogo da Velha</h2>
+
+          <p>
+            Chame um amigo e dispute no multiplayer futurista.
+          </p>
+
+          <div class="game-tags">
+            <span>2 Jogadores</span>
+            <span>Competitivo</span>
+            <span>Lógica</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <a href="JogoDaVelha/velha.html" class="play-btn">
+        Jogar
+      </a>
+
+    </div>
+
+    <div class="game-preview-card">
+
+      <div class="game-preview-left">
+
+        <div class="game-icon adiv">
+          🔢
+        </div>
+
+        <div class="game-info">
+
+          <h2>Adivinhação</h2>
+
+          <p>
+            Descubra o número secreto antes do limite acabar.
+          </p>
+
+          <div class="game-tags">
+            <span>Desafio</span>
+            <span>Níveis</span>
+            <span>Recordes</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <a href="Adivinhacao/adivinha.html" class="play-btn">
+        Jogar
+      </a>
+
+    </div>
+
+    <div class="game-preview-card">
+
+      <div class="game-preview-left">
+
+        <div class="game-icon ppt">
+          ✊
+        </div>
+
+        <div class="game-info">
+
+          <h2>Pedra Papel Tesoura</h2>
+
+          <p>
+            Vença seu rival em rounds rápidos e estratégicos.
+          </p>
+
+          <div class="game-tags">
+            <span>PvP</span>
+            <span>Rápido</span>
+            <span>Diversão</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <a href="PedraPapelTesoura/pedrapaepeltesoura.html" class="play-btn">
+        Jogar
+      </a>
+
+    </div>
+
   </div>
 
-  <div class="card">
-    <h2>⭕ Jogo da Velha</h2>
-    <p>Desafie um amigo.</p>
-    <a href="velha.html">Jogar</a>
-  </div>
+  <!-- LINK DO JS -->
+  <script src="script.js"></script>
 
-  <div class="card">
-    <h2>🔢 Adivinhação</h2>
-    <p>Tente acertar o número.</p>
-    <a href="adivinha.html">Jogar</a>
-  </div>
-
-  <div class="card">
-    <h2>✊ Pedra Papel Tesoura</h2>
-    <p>Jogue contra o computador.</p>
-    <a href="pedrapaepeltesoura.html">Jogar</a>
-  </div>
-
-</main>
-
-<script src="js/script.js"></script>
 </body>
 </html>

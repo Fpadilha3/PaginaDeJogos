@@ -1,41 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedra Papel Tesoura Online</title>
 
-  <link rel="stylesheet" href="pedrapapeltesoura.css">
+  <meta charset="UTF-8">
+
+  <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Pedra Papel Tesoura Online
+  </title>
+
+  <link
+  rel="stylesheet"
+  href="pedrapapeltesoura.css">
+
 </head>
+
 <body>
 
   <div class="container">
 
-    <h1>✊ Pedra Papel Tesoura ✋</h1>
+    <h1>
+       Pedra Papel Tesoura 
+    </h1>
 
     <div class="result-card top-result">
 
-      <h2>Resultado da Rodada</h2>
+      <h2>
+        Resultado da Rodada
+      </h2>
 
-      <p id="result">
+      <div id="result">
         Nenhuma rodada jogada.
-      </p>
+      </div>
 
     </div>
 
     <div class="top-cards">
 
       <div class="card">
+
         <h2>Status</h2>
-        <p id="status">Aguardando jogadores...</p>
+
+        <p id="status">
+          Aguardando jogadores...
+        </p>
+
       </div>
 
       <div class="card">
+
         <h2>Jogador da Vez</h2>
-        <p id="turnPlayer">Player 1</p>
+
+        <p id="turnPlayer">
+          Player 1
+        </p>
+
       </div>
 
       <div class="card">
+
         <h2>Como Jogar</h2>
 
         <p>✊ Pedra vence ✌️ Tesoura</p>
@@ -68,16 +94,28 @@
 
       <div class="choices">
 
-        <button class="choice" data-choice="pedra">
+        <button
+        class="choice"
+        data-choice="pedra">
+
           ✊
+
         </button>
 
-        <button class="choice" data-choice="papel">
+        <button
+        class="choice"
+        data-choice="papel">
+
           ✋
+
         </button>
 
-        <button class="choice" data-choice="tesoura">
+        <button
+        class="choice"
+        data-choice="tesoura">
+
           ✌️
+
         </button>
 
       </div>
@@ -95,13 +133,27 @@
     <div class="scoreboard">
 
       <div class="score-card">
-        <h2 id="scoreName1">Player 1</h2>
-        <span id="score1">0</span>
+
+        <h2 id="scoreName1">
+          Player 1
+        </h2>
+
+        <span id="score1">
+          0
+        </span>
+
       </div>
 
       <div class="score-card">
-        <h2 id="scoreName2">Player 2</h2>
-        <span id="score2">0</span>
+
+        <h2 id="scoreName2">
+          Player 2
+        </h2>
+
+        <span id="score2">
+          0
+        </span>
+
       </div>
 
     </div>
@@ -110,6 +162,22 @@
 
       <button id="resetBtn">
         Reiniciar Placar
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- POPUP -->
+
+  <div id="popup" class="popup">
+
+    <div class="popup-content">
+
+      <div id="popupBody"></div>
+
+      <button id="closePopup">
+        Fechar
       </button>
 
     </div>

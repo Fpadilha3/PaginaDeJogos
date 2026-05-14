@@ -46,15 +46,28 @@ document.getElementById("scoreName1");
 const scoreName2 =
 document.getElementById("scoreName2");
 
+const popup =
+document.getElementById("popup");
+
+const popupBody =
+document.getElementById("popupBody");
+
+const closePopup =
+document.getElementById("closePopup");
+
 score1Text.textContent = score1;
 score2Text.textContent = score2;
 
 function getPlayer1Name(){
+
   return player1Input.value || "Player 1";
+
 }
 
 function getPlayer2Name(){
+
   return player2Input.value || "Player 2";
+
 }
 
 function updateNames(){
@@ -87,16 +100,25 @@ function updateNames(){
 
 }
 
-player1Input.addEventListener("input", updateNames);
-player2Input.addEventListener("input", updateNames);
+player1Input.addEventListener(
+"input",
+updateNames
+);
+
+player2Input.addEventListener(
+"input",
+updateNames
+);
 
 updateNames();
 
-document.querySelectorAll(".choice").forEach(btn=>{
+document.querySelectorAll(".choice")
+.forEach(btn=>{
 
-  btn.addEventListener("click", ()=>{
+  btn.addEventListener("click",()=>{
 
-    const choice = btn.dataset.choice;
+    const choice =
+    btn.dataset.choice;
 
     handleChoice(choice);
 
@@ -105,7 +127,7 @@ document.querySelectorAll(".choice").forEach(btn=>{
 });
 
 document.getElementById("randomBtn")
-.addEventListener("click", ()=>{
+.addEventListener("click",()=>{
 
   const randomChoice =
   choices[Math.floor(Math.random()*3)];
@@ -140,9 +162,6 @@ function handleChoice(choice){
 
     player2Choice = choice;
 
-    secretMessage.textContent =
-    "Jogada salva em segredo!";
-
     showResult();
 
   }
@@ -155,7 +174,7 @@ function showResult(){
 
   if(player1Choice === player2Choice){
 
-    winner = "EMPATE!";
+    winner = "🤝 EMPATE!";
 
   }
 
@@ -173,7 +192,7 @@ function showResult(){
   ){
 
     winner =
-    `${getPlayer1Name()} venceu a rodada!`;
+    `🏆 ${getPlayer1Name()} venceu a rodada!`;
 
     score1++;
 
@@ -182,52 +201,130 @@ function showResult(){
   else{
 
     winner =
-    `${getPlayer2Name()} venceu a rodada!`;
+    `🏆 ${getPlayer2Name()} venceu a rodada!`;
 
     score2++;
 
   }
 
-  localStorage.setItem("score1", score1);
-  localStorage.setItem("score2", score2);
+  localStorage.setItem("score1",score1);
+  localStorage.setItem("score2",score2);
 
   score1Text.textContent = score1;
   score2Text.textContent = score2;
 
-  result.innerHTML = `
-  
-    ${getPlayer1Name()} escolheu
-    <strong>${player1Choice.toUpperCase()}</strong>
+  secretMessage.textContent =
+  "Resultado revelado!";
 
-    <br><br>
+  popup.style.display = "flex";
 
-    ${getPlayer2Name()} escolheu
-    <strong>${player2Choice.toUpperCase()}</strong>
+  popupBody.innerHTML = `
 
-    <br><br>
+    <div class="popup-result">
 
-    <strong>${winner}</strong>
+      <h2 class="popup-title">
+        RESULTADO
+      </h2>
+
+      <div class="popup-choices">
+
+        <div class="popup-player">
+
+          <h3>
+            ${getPlayer1Name()}
+          </h3>
+
+          <div class="popup-choice">
+
+            ${getEmoji(player1Choice)}
+
+          </div>
+
+          <p>
+            ${player1Choice.toUpperCase()}
+          </p>
+
+        </div>
+
+        <div class="popup-vs">
+          VS
+        </div>
+
+        <div class="popup-player">
+
+          <h3>
+            ${getPlayer2Name()}
+          </h3>
+
+          <div class="popup-choice">
+
+            ${getEmoji(player2Choice)}
+
+          </div>
+
+          <p>
+            ${player2Choice.toUpperCase()}
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="popup-winner">
+
+        ${winner}
+
+      </div>
+
+      <div class="popup-score">
+
+        ${score1}
+        X
+        ${score2}
+
+      </div>
+
+    </div>
 
   `;
 
-  if(score1 >= 5){
+  if(score1 >= 5 || score2 >= 5){
 
-    result.innerHTML += `
-      <div class="winner-message">
-        🏆 ${getPlayer1Name()} GANHOU O JOGO!
+    const champion =
+    score1 >= 5
+    ? getPlayer1Name()
+    : getPlayer2Name();
+
+    popupBody.innerHTML = `
+
+      <div class="final-popup">
+
+        <div class="trophy">
+          🏆
+        </div>
+
+        <h2 class="champion-name">
+
+          ${champion}
+
+        </h2>
+
+        <p class="champion-text">
+
+          GANHOU A PARTIDA!
+
+        </p>
+
+        <div class="final-score">
+
+          ${score1}
+          X
+          ${score2}
+
+        </div>
+
       </div>
-    `;
 
-    resetGame();
-
-  }
-
-  else if(score2 >= 5){
-
-    result.innerHTML += `
-      <div class="winner-message">
-        🏆 ${getPlayer2Name()} GANHOU O JOGO!
-      </div>
     `;
 
     resetGame();
@@ -239,9 +336,6 @@ function showResult(){
 
   player1Turn = true;
 
-  secretMessage.textContent =
-  "Escolha secreta...";
-
   currentPlayer.textContent =
   `Vez de ${getPlayer1Name()}`;
 
@@ -252,6 +346,24 @@ function showResult(){
   "Nova rodada iniciada";
 
 }
+
+closePopup.addEventListener("click",()=>{
+
+  popup.style.display = "none";
+
+});
+
+/* FECHAR AO CLICAR FORA */
+
+popup.addEventListener("click",(e)=>{
+
+  if(e.target === popup){
+
+    popup.style.display = "none";
+
+  }
+
+});
 
 function resetGame(){
 
@@ -266,12 +378,12 @@ function resetGame(){
     score1Text.textContent = 0;
     score2Text.textContent = 0;
 
-  },2500);
+  },3000);
 
 }
 
 document.getElementById("resetBtn")
-.addEventListener("click", ()=>{
+.addEventListener("click",()=>{
 
   score1 = 0;
   score2 = 0;
@@ -286,3 +398,19 @@ document.getElementById("resetBtn")
   "Placar reiniciado!";
 
 });
+
+function getEmoji(choice){
+
+  if(choice === "pedra"){
+    return "✊";
+  }
+
+  if(choice === "papel"){
+    return "✋";
+  }
+
+  if(choice === "tesoura"){
+    return "✌️";
+  }
+
+}
