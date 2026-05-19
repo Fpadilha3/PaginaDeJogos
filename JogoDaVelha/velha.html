@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Neon Velha</title>
 
-  <link rel="stylesheet" href="velha.css">
+  <link
+    rel="stylesheet"
+    href="velha.css"
+  >
+
 </head>
 <body>
 
-  <div class="glow glow1"></div>
-  <div class="glow glow2"></div>
+  <!-- GLOWS -->
+  <div class="bg1"></div>
+  <div class="bg2"></div>
 
   <main class="container">
 
@@ -20,16 +30,20 @@
 
       <div class="top-area">
 
+        <!-- LOGO -->
         <div class="logo-box">
+
           <h1 class="logo">
             <span>JOGO DA VELHA</span>
           </h1>
 
           <p class="subtitle">
-      
+           
           </p>
+
         </div>
 
+        <!-- PLAYERS -->
         <div class="players-card">
 
           <h3>JOGADORES</h3>
@@ -52,7 +66,7 @@
 
       </div>
 
-      <!-- TABULEIRO -->
+      <!-- BOARD -->
       <div class="board">
 
         <div class="cell" data-index="0"></div>
@@ -74,68 +88,120 @@
     <!-- DIREITA -->
     <aside class="right">
 
+      <!-- STATUS -->
       <div class="card">
+
         <h2>STATUS</h2>
 
-        <p class="status-text" id="status">
+        <p
+          class="status-text"
+          id="status"
+        >
           Clique em iniciar
         </p>
+
       </div>
 
+      <!-- TURNO -->
       <div class="card">
+
         <h2>JOGADOR DA VEZ</h2>
 
-        <div class="turn-player" id="turn">
+        <div
+          class="turn-player"
+          id="turn"
+        >
           X
         </div>
+
       </div>
 
+      <!-- SCORE -->
       <div class="card">
+
         <h2>PLACAR</h2>
 
         <div class="score-item">
+
           <span id="nameX">
             Jogador X
           </span>
 
-          <span class="score-x" id="scoreX">
+          <span
+            class="score-x"
+            id="scoreX"
+          >
             0
           </span>
+
         </div>
 
         <div class="score-item">
+
           <span id="nameO">
             Jogador O
           </span>
 
-          <span class="score-o" id="scoreO">
+          <span
+            class="score-o"
+            id="scoreO"
+          >
             0
           </span>
+
         </div>
 
       </div>
 
+      <!-- COMO JOGAR -->
       <div class="card how-card">
 
         <h2>COMO JOGAR</h2>
 
         <ul>
-          <li>2 jogadores: X e O</li>
-          <li>Cada jogador joga uma vez</li>
-          <li>Complete 3 iguais para vencer</li>
-          <li>Se encher o tabuleiro = empate</li>
+
+          <li>
+            2 jogadores: X e O
+          </li>
+
+          <li>
+            Cada jogador joga uma vez
+          </li>
+
+          <li>
+            Complete 3 iguais para vencer
+          </li>
+
+          <li>
+            Se encher o tabuleiro = empate
+          </li>
+
         </ul>
 
       </div>
 
+      <!-- BOTÕES -->
       <div class="buttons">
 
-        <button id="startBtn" class="start-btn">
+        <button
+          id="startBtn"
+          class="start-btn"
+        >
           Iniciar
         </button>
 
-        <button id="restartBtn" class="restart-btn">
-          Reiniciar
+        <button
+          id="restartBtn"
+          class="restart-btn"
+        >
+          Reiniciar Rodada
+        </button>
+
+        <button
+          id="resetScoreBtn"
+          class="score-reset-btn"
+        >
+          Resetar Placar
         </button>
 
       </div>
@@ -144,7 +210,30 @@
 
   </main>
 
-  <!-- DEGRADE EMBAIXO -->
+  <!-- POPUP -->
+  <div
+    class="winner-popup"
+    id="winnerPopup"
+  >
+
+    <div class="winner-box">
+
+      <h2 id="winnerTitle">
+        Jogador venceu!
+      </h2>
+
+      <button
+        class="popup-btn"
+        id="closePopup"
+      >
+        Jogar Novamente
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- GLOW -->
   <div class="bottom-gradient"></div>
 
   <script src="velha.js"></script>
