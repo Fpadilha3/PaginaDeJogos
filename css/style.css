@@ -118,7 +118,7 @@ body::before{
 }
 
 /* =========================
-   TÍTULO (MELHORADO MESMO)
+   TÍTULO
 ========================= */
 
 .intro h1{
@@ -182,7 +182,7 @@ body::before{
 }
 
 /* =========================
-   CARDS (SEU ESTILO MANTIDO)
+   CARDS
 ========================= */
 
 .games-preview{
@@ -329,8 +329,26 @@ body::before{
   box-shadow:0 10px 25px rgba(124,58,237,0.4);
 }
 
-/* RESPONSIVO */
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media(max-width:1200px){
+
+  .games-preview{
+    width:100%;
+  }
+
+  .game-preview-card{
+    width:100%;
+  }
+
+}
+
+/* TABLETS */
+
 @media(max-width:900px){
+
   .game-preview-card{
     flex-direction:column;
     align-items:flex-start;
@@ -339,10 +357,138 @@ body::before{
   .play-btn{
     width:100%;
   }
+
+  .intro-content{
+    padding:45px 25px;
+  }
+
+  .intro h1{
+    font-size:2.5rem;
+  }
+
+  .game-info h2{
+    font-size:1.6rem;
+  }
+
 }
 
+/* CELULARES */
+
 @media(max-width:600px){
-  .intro h1{
-    font-size:2.2rem;
+
+  body{
+    padding:12px;
   }
+
+  .intro{
+    margin-bottom:25px;
+  }
+
+  .intro-content{
+    padding:35px 20px;
+    border-radius:25px;
+  }
+
+  .intro h1{
+    font-size:2rem;
+    line-height:1.2;
+  }
+
+  .intro p{
+    font-size:0.95rem;
+  }
+
+  .intro-tags{
+    gap:8px;
+  }
+
+  .intro-tags span{
+    font-size:0.7rem;
+    padding:7px 12px;
+  }
+
+  .game-preview-card{
+    padding:25px 20px;
+    border-radius:26px;
+    gap:25px;
+  }
+
+  .game-preview-left{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:18px;
+    width:100%;
+  }
+
+  .game-icon{
+    width:78px;
+    height:78px;
+    font-size:2rem;
+  }
+
+  .game-info{
+    width:100%;
+  }
+
+  .game-info h2{
+    font-size:1.4rem;
+  }
+
+  .game-info p{
+    font-size:0.9rem;
+    line-height:1.6;
+  }
+
+  .game-tags{
+    gap:8px;
+  }
+
+  .game-tags span{
+    font-size:0.7rem;
+    padding:8px 12px;
+  }
+
+  .play-btn{
+    width:100%;
+    height:60px;
+    font-size:0.9rem;
+  }
+
+}
+
+/* CELULARES PEQUENOS */
+
+@media(max-width:400px){
+
+  .intro h1{
+    font-size:1.7rem;
+  }
+
+  .intro p{
+    font-size:0.82rem;
+  }
+
+  .game-preview-card{
+    padding:20px 15px;
+  }
+
+  .game-icon{
+    width:65px;
+    height:65px;
+    font-size:1.6rem;
+  }
+
+  .game-info h2{
+    font-size:1.15rem;
+  }
+
+  .game-info p{
+    font-size:0.8rem;
+  }
+
+  .play-btn{
+    height:54px;
+    font-size:0.8rem;
+  }
+
 }

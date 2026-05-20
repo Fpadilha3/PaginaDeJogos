@@ -7,6 +7,9 @@ document.getElementById("startBtn");
 const restartBtn =
 document.getElementById("restartBtn");
 
+const resetScoreBtn =
+document.getElementById("resetScoreBtn");
+
 const difficulty =
 document.getElementById("difficulty");
 
@@ -104,6 +107,11 @@ restartBtn.addEventListener(
   nextPlayer
 );
 
+resetScoreBtn.addEventListener(
+  "click",
+  resetScore
+);
+
 pads.forEach(pad => {
 
   pad.addEventListener(
@@ -126,6 +134,17 @@ pads.forEach(pad => {
   });
 
 });
+
+function resetScore(){
+
+  player1Score = 0;
+
+  player2Score = 0;
+
+  scoreText.textContent =
+  `${player1Score} x ${player2Score}`;
+
+}
 
 function startGame(){
 

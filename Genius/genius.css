@@ -72,6 +72,7 @@ header span{
 #difficulty,
 #startBtn,
 #restartBtn,
+#resetScoreBtn,
 .playersBox input{
 
   border:none;
@@ -125,7 +126,8 @@ header span{
 }
 
 #startBtn,
-#restartBtn{
+#restartBtn,
+#resetScoreBtn{
   background:
   linear-gradient(
     135deg,
@@ -143,7 +145,8 @@ header span{
 }
 
 #startBtn:hover,
-#restartBtn:hover{
+#restartBtn:hover,
+#resetScoreBtn:hover{
   transform:translateY(-3px);
 
   box-shadow:
@@ -426,19 +429,25 @@ main{
   line-height:1.8;
 }
 
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
+
 @media(max-width:1200px){
 
   main{
     flex-direction:column;
+    align-items:center;
   }
 
   .panel{
     width:100%;
+    max-width:900px;
   }
 
 }
 
-@media(max-width:768px){
+@media(max-width:900px){
 
   header{
     justify-content:center;
@@ -446,17 +455,18 @@ main{
   }
 
   .topButtons{
-    width:100%;
     justify-content:center;
+    width:100%;
   }
 
   .board{
-    width:min(92vw,430px);
-    height:min(92vw,430px);
+    width:min(90vw,450px);
+    height:min(90vw,450px);
   }
 
-  .howTo{
-    grid-column:span 1;
+  .panel{
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
   }
 
 }
@@ -464,38 +474,115 @@ main{
 @media(max-width:600px){
 
   body{
-    padding-bottom:30px;
+    overflow-x:hidden;
+  }
+
+  header{
+    padding:20px 15px;
+  }
+
+  header h1{
+    font-size:2.2rem;
+  }
+
+  .topButtons{
+    flex-direction:column;
+    width:100%;
+    align-items:center;
+  }
+
+  #difficulty,
+  #startBtn,
+  #resetScoreBtn{
+    width:100%;
+    max-width:320px;
   }
 
   .playersBox{
     flex-direction:column;
     align-items:center;
+    width:100%;
   }
 
   .playersBox input{
     width:100%;
-    max-width:350px;
+    max-width:320px;
   }
 
-  .topButtons{
-    flex-direction:column;
+  .board{
+    width:95vw;
+    height:95vw;
+    max-width:380px;
+    max-height:380px;
   }
 
-  #difficulty,
-  #startBtn{
-    width:100%;
+  .center{
+    width:40%;
+    height:40%;
+  }
+
+  .center h2{
+    font-size:1.3rem;
+  }
+
+  .center p{
+    font-size:.75rem;
   }
 
   .panel{
+    width:100%;
     grid-template-columns:1fr;
   }
 
   .card{
     width:100%;
+    padding:22px;
+  }
+
+  .card span{
+    font-size:2rem;
+  }
+
+  .howTo{
+    grid-column:span 1;
   }
 
   .box{
-    padding:35px 25px;
+    width:92%;
+    padding:35px 20px;
+  }
+
+  .box h2{
+    font-size:2rem;
+  }
+
+}
+
+@media(max-width:400px){
+
+  .board{
+    width:96vw;
+    height:96vw;
+  }
+
+  .center h2{
+    font-size:1rem;
+  }
+
+  .center p{
+    font-size:.6rem;
+  }
+
+  .card{
+    padding:18px;
+  }
+
+  .card h3{
+    font-size:.8rem;
+  }
+
+  .card p{
+    font-size:.9rem;
   }
 
 }

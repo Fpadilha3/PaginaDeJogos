@@ -10,6 +10,8 @@ const statusText = document.getElementById("status");
 const startBtn = document.getElementById("startBtn");
 const restartBtn = document.getElementById("restartBtn");
 
+const resetScoreBtn = document.getElementById("resetScoreBtn");
+
 const turnPlayer = document.getElementById("turnPlayer");
 
 const score1Text = document.getElementById("score1");
@@ -220,6 +222,15 @@ function restartGame(){
   lastGuess.textContent = "?";
 }
 
+function resetScore(){
+
+  score1 = 0;
+  score2 = 0;
+
+  score1Text.textContent = "0";
+  score2Text.textContent = "0";
+}
+
 function closeWinner(){
 
   winnerScreen.style.display = "none";
@@ -228,6 +239,8 @@ function closeWinner(){
 startBtn.addEventListener("click", startGame);
 
 restartBtn.addEventListener("click", restartGame);
+
+resetScoreBtn.addEventListener("click", resetScore);
 
 guessBtn.addEventListener("click", checkGuess);
 
